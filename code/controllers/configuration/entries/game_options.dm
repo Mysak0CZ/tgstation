@@ -35,10 +35,6 @@
 /datum/config_entry/keyed_list/midround_antag/ValidateListEntry(key_name, key_value)
 	return key_name in config.modes
 
-/datum/config_entry/keyed_list/policy
-	key_mode = KEY_MODE_TEXT
-	value_mode = VALUE_MODE_TEXT
-
 /datum/config_entry/number/damage_multiplier
 	config_entry_value = 1
 	integer = FALSE
@@ -69,6 +65,8 @@
 /datum/config_entry/flag/disable_secborg	// disallow secborg module to be chosen.
 
 /datum/config_entry/flag/disable_peaceborg
+
+/datum/config_entry/flag/disable_warops
 
 /datum/config_entry/flag/economy	//money money money money money money money money money money money money
 
@@ -272,6 +270,8 @@
 	movedelay_type = /mob/living/simple_animal
 /////////////////////////////////////////////////
 
+/datum/config_entry/flag/virtual_reality	//Will virtual reality be loaded
+
 /datum/config_entry/flag/roundstart_away	//Will random away mission be loaded.
 
 /datum/config_entry/number/gateway_delay	//How long the gateway takes before it activates. Default is half an hour. Only matters if roundstart_away is enabled.
@@ -380,3 +380,13 @@
 /datum/config_entry/number/monkeycap
 	config_entry_value = 64
 	min_val = 0
+
+/datum/config_entry/number/ratcap
+	config_entry_value = 64
+	min_val = 0
+
+/datum/config_entry/number/maxfine
+	config_entry_value = 1000
+	min_val = 0
+
+/datum/config_entry/flag/dynamic_config_enabled

@@ -38,12 +38,13 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	jobs["Detective"] = 13
 	jobs["Chief Medical Officer"] = 20
 	jobs["Chemist"] = 21
-	jobs["Geneticist"] = 22
-	jobs["Virologist"] = 23
-	jobs["Medical Doctor"] = 24
+	jobs["Virologist"] = 22
+	jobs["Medical Doctor"] = 23
+	jobs["Paramedic"] = 24
 	jobs["Research Director"] = 30
 	jobs["Scientist"] = 31
 	jobs["Roboticist"] = 32
+	jobs["Geneticist"] = 33
 	jobs["Chief Engineer"] = 40
 	jobs["Station Engineer"] = 41
 	jobs["Atmospheric Technician"] = 42
@@ -119,7 +120,8 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	var/pos_y
 	var/life_status
 
-	for(var/mob/living/carbon/human/H in GLOB.carbon_list)
+	for(var/i in GLOB.human_list)
+		var/mob/living/carbon/human/H = i
 		var/nanite_sensors = FALSE
 		if(H in SSnanites.nanite_monitored_mobs)
 			nanite_sensors = TRUE
